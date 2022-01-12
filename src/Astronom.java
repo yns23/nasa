@@ -2,22 +2,23 @@ public class Astronom implements Beobachter{
 
 
     private String name;
-    private Stern stern;
+    private Subjekt sub;
 
-    public Astronom(Stern stern, String name){
+    public Astronom(Subjekt sub, String name){
         this.name = name;
-        this.stern = stern;
-        stern.registriereBeobachter(this);
+        this.sub = sub;
+        sub.registriereBeobachter(this);
     }
     @Override
-    public void update() {
-        System.out.println("Der Astronom " + this.name + " beobachtet: " + stern.getAktion());
+    public void update(Subjekt sub) {
+        this.sub = sub;
+        System.out.println("Der Astronom " + this.name + " hat ein "+ sub.getName() + " beobachtet: " + sub.getAktion());
     }
 
     @Override
     public void aendern(String update) {
         System.out.println("ACHTUNG: " + this.name + " meldet ein Update");
-        stern.setAktion(update);
+        sub.setAktion(update);
 
 
     }
@@ -26,4 +27,7 @@ public class Astronom implements Beobachter{
         return name;
     }
 
+    public void setSub(Subjekt sub) {
+        this.sub = sub;
+    }
 }

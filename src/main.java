@@ -1,7 +1,7 @@
 public class main {
 
     public static void main(String[] args) {
-        
+
         Stern stern = new Stern();
 
         Astronom alex = new Astronom(stern,"Alex");
@@ -21,5 +21,23 @@ public class main {
 
         stern.abmeldenBeobachter(alex);
         stern.setAktion("Alex hat die Explosion nicht überlebt.");
+
+
+
+        System.out.println();
+        System.out.println("Aufgabe 2");
+
+
+        Subjekt hk1 = new Himmelskoerper().getSubjekt("Planet");
+        Subjekt hk2 = new Himmelskoerper().getSubjekt("Stern");
+
+        hk1.registriereBeobachter(yunus);
+        hk2.registriereBeobachter(alex);
+
+
+        hk1.setAktion("Die Erde wurde entdeckt.");
+        hk2.setAktion("Der Stern 1230489 wurde entdeckt.");
+
+
     }
 }

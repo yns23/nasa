@@ -1,12 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Stern implements Subjekt{
+public class Planet implements Subjekt{
 
     private List<Beobachter> beobachterListe = new ArrayList<Beobachter>();
 
     private String aktion;
-    private String name = "Stern";
+    private String name = "Planet";
+
 
     @Override
     public void registriereBeobachter(Beobachter beobachter) {
@@ -16,7 +17,7 @@ public class Stern implements Subjekt{
     @Override
     public void abmeldenBeobachter(Beobachter beobachter) {
         this.beobachterListe.remove(beobachter);
-        System.out.println("Stern: Der Beobachter wurde erfolgreich abgemeldet.");
+        System.out.println("Planet: Der Beobachter wurde erfolgreich abgemeldet.");
     }
 
     @Override
@@ -39,7 +40,8 @@ public class Stern implements Subjekt{
     @Override
     public void setAktion(String aktion) {
         this.aktion = aktion;
-        System.out.println("Stern: Hat ein Update erhalten -> " + aktion);
+
+        System.out.println("Planet: Hat ein Update erhalten -> " + aktion);
         this.benachrichtigeAlleBeobachter();
 
     }
